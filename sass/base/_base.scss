@@ -1,0 +1,84 @@
+@font-face
+{
+    font-family: 'Barlow-bold';
+    src:url(assets/fonts/Barlow-bold.ttf);
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face
+{
+    font-family: 'Barlow-light';
+    src:url(assets/fonts/Barlow-light.ttf);
+    font-weight: light;
+    font-style: light;
+}
+
+@font-face
+{
+    font-family: 'Playfair-display-Regular';
+    src:url(assets/fonts/Playfair-display-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+$mainFontFamily: 'Playfair-display-Regular', sans-serif;
+$whiteColor: #fff;
+$greyColor: rgb(64, 64, 64);
+$redColor: rgb(239,65, 56);
+
+@mixin mainFontProperties ($mainFontFamily, $mainFontSize, $mainFontWeight)
+{
+    font-family: $mainFontFamily;
+    font-size: $mainFontSize;
+    font-weight: $mainFontWeight;
+}
+
+@mixin mainTextProperties ($mainTextAlign, $mainLetterSpacing, $mainWordSpacing, $mainLineHeight)
+{
+    text-align: $mainTextAlign;
+    letter-spacing: $mainLetterSpacing;
+    word-spacing: $mainWordSpacing;
+    line-height: $mainLineHeight;
+}
+
+@mixin mainDisplayProperties ($mainDisplayProperties, $mainJustifyContentProperties)
+{
+    display: $mainDisplayProperties;
+    justify-content: $mainJustifyContentProperties;
+}
+
+@function widthValue($widthValue)
+{
+    $widthResult: calc($widthValue / 2);
+    @return $widthResult;
+}
+
+%socialMediaBehaviour
+{
+    transition: 350ms all ease;
+    transform: scale(1.2);
+}
+
+%mainFormProperties
+{
+    outline: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+@mixin tablets
+{
+    @media screen and (max-width: 52rem)
+    {
+        @content;
+    }
+}
+
+@mixin phones
+{
+    @media screen and (max-width: 41rem)
+    {
+        @content;
+    }
+}

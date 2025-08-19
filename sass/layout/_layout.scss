@@ -1,0 +1,385 @@
+body
+{
+    width: widthValue(200%);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    .news-image
+    {
+        width: widthValue(600px);
+
+        @include tablets
+        {
+            width: widthValue(580px);
+        }
+
+        @include phones
+        {
+            width: widthValue(560);
+        }
+    }
+}
+
+header
+{
+    @include mainDisplayProperties (flex, space-between);
+    padding: 15px 40px;
+    box-sizing: border-box;
+    background-color: $redColor;
+
+    @include phones
+    {
+        flex-direction: column;
+    }
+
+    img
+    {
+        width: widthValue(240px);
+        
+        @include tablets
+        {
+            width: widthValue(220px);
+        }
+
+        @include phones
+        {
+            width: widthValue(200px);
+            margin: 0 auto;
+        }
+    }
+
+    nav
+    {
+        @include mainDisplayProperties (flex, space-between);
+        gap: 20px;
+        align-items: center;
+
+        @include tablets
+        {
+            gap: 15px;
+        }
+
+        @include phones
+        {
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        a
+        {
+            @include mainFontProperties ($mainFontFamily, 0.7rem, bold);
+            color: $whiteColor;
+            text-decoration: none;
+
+            @include tablets
+            {
+                font-size: 0.6rem;
+            }
+
+            @include phones
+            {
+                font-size: 0.5rem;
+            }
+
+            &:hover
+            {
+                font-size: 0.72rem;
+            }
+        }
+    }
+}
+
+main
+{
+    article
+    {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+        @include phones
+        {
+            grid-template-columns: 1fr;
+        }
+
+        section
+        {
+            margin-left: 10px;
+
+            .news
+            {
+                margin: 0 auto;
+                gap: 50px;
+                box-sizing: border-box;
+                @include mainDisplayProperties (flex, space-around);
+                text-align: center;
+                font-size: 0.8rem;
+                flex-wrap: wrap;  
+            }
+        }
+
+        .landing-slogan 
+        {
+            margin-left: 10px;
+
+            .title
+            {
+                @include mainTextProperties (center, 1rem, 1rem, 3rem);
+
+                @include tablets
+                {
+                    font-size: 1.4rem;
+                }
+
+                @include phones
+                {
+                    font-size: 1.3rem;
+                }
+            }
+
+            .subtitle
+            {
+                @include mainTextProperties (center, 1.5rem, 1.5rem, 4rem);
+
+                @include tablets
+                {
+                    font-size: 1rem;
+                }
+
+                @include phones
+                {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .contact
+        {
+            box-sizing: border-box;
+            @include mainDisplayProperties (flex, center);
+            flex-direction: column;
+            text-align: center;
+
+            .form
+            {
+                margin-top: 20px; 
+                @include mainFontProperties ($mainFontFamily, 1rem, normal);
+                background-color: $redColor;
+                color:$whiteColor;
+                margin-right: 10px; 
+
+                @include tablets
+                {
+                    font-size: 1rem;
+                }
+
+                @include phones
+                {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .comments
+        {
+            margin: 20px;
+            @include mainDisplayProperties (flex, center);
+            text-align: center;
+            flex-wrap: wrap;
+
+            .comments-image
+            {
+                margin: 20px;
+                height: 100px;
+                align-items: center;
+
+                @include tablets
+                {
+                    height: 90px;
+                }
+
+                @include phones
+                {
+                    height: 80px;
+                }
+            }
+        }
+    }
+}
+
+fieldset
+{
+    .form-elements
+    {
+        padding: 10px 0;
+
+        .label
+        {
+            @include mainFontProperties ($mainFontFamily, 0.9rem, bold);
+            color: $whiteColor;
+
+            @include tablets
+            {
+                font-size: 0.8rem; 
+            }
+
+            @include phones
+            {
+                font-size: 0.7rem; 
+            }
+        }
+
+        .input
+        {
+            @extend %mainFormProperties;
+            width: widthValue(160%);
+        }
+
+        .select
+        {
+            @extend %mainFormProperties;
+            width: widthValue(170%);
+        }
+
+        .textarea
+        {
+            @extend %mainFormProperties;
+            width: widthValue(161%);
+            min-height: 80px;
+            resize: vertical;
+        }
+    }
+
+    .btn
+    {
+        margin-top: 10px;
+        @extend %mainFormProperties;
+        width: widthValue(170%);
+        min-height: 40px; 
+        cursor: pointer;
+
+        &:hover
+        {
+            background-color: #000;
+            color: #ffff00;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+    }
+}
+
+footer
+{
+    width: widthValue(200%);
+
+    .footer-socia-media
+    {
+        margin: 10px;
+        @include mainDisplayProperties (flex, space-between);
+        align-items: center;
+
+        .footer-image
+        {
+            width: widthValue(240px);
+
+            @include tablets
+            {
+                width: widthValue(220px);
+            }
+
+            @include phones
+            {
+                width: widthValue(200px);
+            }
+        }
+
+        .social-media
+        {
+            @include mainDisplayProperties (flex, center);
+            text-align: center;
+            gap: 20px;
+        }
+
+        .twitter
+        {
+            &:hover
+            {
+                @extend %socialMediaBehaviour;
+            }
+        }
+
+        .instagram
+        {
+            &:hover
+            {
+                @extend %socialMediaBehaviour;
+            }
+        }
+
+        .facebook
+        {
+            &:hover
+            {
+                @extend %socialMediaBehaviour;
+            }
+        }
+    }
+
+    .links
+    {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin: 10px 0;
+
+        @include phones
+        {
+            grid-template-columns: 1fr;
+            text-align: center;
+            justify-content: center;
+        }
+    }
+
+    .links-li
+    {
+        list-style-type: none;
+    }
+
+    .link-a
+    {
+        @include mainFontProperties ($mainFontFamily, 0.9rem, normal);
+        text-decoration: none;
+        color: $greyColor;
+
+        @include tablets
+        {
+            font-size: 0.8rem; 
+        }
+
+        @include phones
+        {
+            font-size: 0.7rem; 
+        }
+
+        &:hover
+        {
+            color: #000000;
+            font-weight: bold;
+        }
+    }
+
+    .links-section
+    {
+        margin: 0px 40px;
+        @include mainFontProperties ($mainFontFamily, 1rem, bold);
+
+        @include tablets
+        {
+            font-size: 0.9rem; 
+        }
+
+        @include phones
+        {
+            font-size: 0.8rem; 
+        }
+    }
+}

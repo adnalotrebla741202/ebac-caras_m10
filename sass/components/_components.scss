@@ -1,0 +1,45 @@
+.title 
+{
+    @include mainFontProperties ($mainFontFamily, 1.5rem, bold);
+
+    @include tablets
+    {
+        font-size: 1.4rem;
+    }
+
+    @include phones
+    {
+        font-size: 1.3rem;
+    }
+}
+
+.subtitle
+{
+    @include mainFontProperties ($mainFontFamily, 1.1rem, bold);
+
+    @include tablets
+    {
+        font-size: 1rem;
+    }
+
+    @include phones
+    {
+        font-size: 0.9rem;
+    }
+}
+
+.text
+{
+    @include mainFontProperties ($mainFontFamily, 0.9rem, normal);
+    color: $greyColor;
+
+    @include tablets
+    {
+        font-size: 0.8rem; 
+    }
+
+    @include phones
+    {
+        font-size: 0.7rem; 
+    }
+}
