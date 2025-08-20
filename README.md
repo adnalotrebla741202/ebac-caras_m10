@@ -186,3 +186,7 @@ En este proyecto se realiza la landing page para las suscripciones al newsletter
 ---
 
 <img width="609" height="1080" alt="image" src="https://github.com/user-attachments/assets/5f3485ec-cf51-4f68-ac2e-ba3d5b2eb9b3" />
+
+---
+
+## <p align="center"><a href="https://github.com/adnalotrebla741202">REGRESAR</a></p>
